@@ -25,9 +25,31 @@ def verify_cart_is_empty(context):
 
 @when ('click Sign In')
 def click_sign_in(context):
-    context.driver.find_element(By.ID,("account-sign-in")).click()
+    context.driver.find_element(By.ID, "account-sign-in").click()
+    sleep(3)
+
+#@when('click Sign In')
+#def click_sign_out(context):
+#    context.driver.find_element(By.CSS_SELECTOR, ("[data-test='accountNav-signIn']")).click()
+#    sleep(3)
 
 
-@when('click Sign In')
-def click_sign_out(context):
-    context.driver.find_element(By.CSS_SELECTOR, ("[data-test='accountNav-signIn']")).click()
+@when('From right side navigation menu, click Sign In.')
+def click_sign_in(context):
+    context.driver.find_element(By.XPATH, "//button[@data-test='accountNav-signIn']").click()
+    sleep(5)
+
+
+@then('Verify Sign in form opened')
+def verify_sign_in_form(context):
+    expected_sign_in_text = 'Sign into your Target account'
+    sleep(5)
+    actual_sign_in_text = context.driver.find_element(By.XPATH, "//span[text()='Sign into your Target account']").text
+    assert expected_sign_in_text in actual_sign_in_text, f'Expected {expected_sign_in_text} to be in {actual_sign_in_text}'
+    print('Test case passed')
+
+
+
+
+
+
