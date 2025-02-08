@@ -10,5 +10,5 @@ Feature: Test for Card
  Scenario: Verify that a logged out user can navigate to Sign In:
     Given open target main page
     When click Sign In
-    Given From right side navigation menu, click Sign In.
+    And From right side navigation menu, click Sign In.
     Then Verify Sign In form opened
