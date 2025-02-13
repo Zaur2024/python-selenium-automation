@@ -1,4 +1,4 @@
-#from selenium import webdriver
+"""from selenium import webdriver
 from time import sleep
 
 from selenium.webdriver.common.by import By
@@ -66,3 +66,6 @@ driver.find_element(By.CSS_SELECTOR,'a.a-button-text').click()
 
 #Sign in link
 driver.find_element(By.CSS_SELECTOR,"a.a-link-emphasis").click()
+
+
+"""
