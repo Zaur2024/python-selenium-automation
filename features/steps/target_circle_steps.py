@@ -79,11 +79,11 @@ def click_on_frequently_asked_questions(context):
     context.driver.find_element(By.CSS_SELECTOR,"a[href='https://help.target.com/help/subcategoryarticle?childcat=About+Target+Circle%E2%84%A2+Card&parentcat=Target+Circle%E2%84%A2']").click()
     sleep(3)
 
-#  I couldn't verify Get to know Target Circle page
-@then("Verify Get to know Target Circle page")
-def verify_frequently_asked_questions_page(context):
-    expected_text='Get to know Target Circle™'
-    actual_text=context.driver.find_element(By.CSS_SELECTOR, (".global-header")).text()
+
+@then('Verify Get to know Target Circle')
+def verify_get_to_know_circle(context):
+    expected_text="Get to know Target Circle"
+    actual_text=context.driver.find_element(By.ID,"j_id0:contentTemplate:j_id24:j_id25:j_id30").text
     assert expected_text in actual_text
 
 
@@ -141,7 +141,21 @@ def government_assistance(context):
     assert expected_text in actual_text
 
 
+@when("Click on Find a card right for you")
+def find_a_card_right(context):
+    context.driver.find_element(By.XPATH, "//a[@href='/circlecard']").click()
+    sleep(2)
 
+
+@then("Verify circle card logo")
+def circle_card_logo(context):
+    expected_text='Get the most from your Target Circle™️ Card'
+    actual_text=context.driver.find_element(By.CSS_SELECTOR, ".styles_ndsHeading__HcGpD.styles_fontSize2__8Iex_.styles_x2Margin__M5gHh").text
+    assert expected_text in actual_text
+    sleep(2)
+
+
+#homework N4.3
 @when("Search for lemon")
 def search_for_lemon(context):
     context.driver.find_element(By.ID,"search").send_keys("lemon")
@@ -166,13 +180,27 @@ def verify_lemon(context):
     sleep(2)
 
 
+#homework N4.1
+@when("search for {product}")
+def search_product(context,product):
+    context.driver.find_element(By.ID,"search").send_keys(product)
+    context.driver.find_element(By.XPATH,("//button[@data-test='@web/Search/SearchButton']")).click()
 
 
+@then("Verify result for milk")
+def result_for_milk(context):
+    expected_text='milk'
+    actual_result=context.driver.find_element(By.XPATH,("//div[@data-test='lp-resultsCount']")).text
+    assert expected_text in actual_result
+    sleep(2)
 
 
-
-
-
+@then("Verify result for bread")
+def result_for_bread(context):
+    expected_text='bread'
+    actual_result=context.driver.find_element(By.XPATH,("//div[@data-test='lp-resultsCount']")).text
+    assert expected_text in actual_result
+    sleep(2)
 
 
 

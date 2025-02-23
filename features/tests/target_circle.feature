@@ -1,5 +1,5 @@
 Feature: Test for Target Circle
-
+#homework N4.2
   Scenario: Verify Join Target Circle
 
     Given Open Target main page
@@ -39,13 +39,12 @@ Feature: Test for Target Circle
     When Click on Community support votes
     Then Verify Sign into your Target account page
 
-# I couldn't verify Get to know Target Circle page
   Scenario: Verify Frequently asked questions
 
     Given Open Target main page
     When Click on Target Circle link
     When Click on Frequently asked questions
-    Then Verify Get to know Target Circle page
+    Then Verify Get to know Target Circle
 
 
   Scenario: Verify Learn more about Target Circle 360
@@ -64,7 +63,6 @@ Feature: Test for Target Circle
     Then Verify One-Year Membership
 
 
-
   Scenario: Save over 50% as a collage student
 
     Given Open Target main page
@@ -81,11 +79,35 @@ Feature: Test for Target Circle
     Then Verify Target Circle™ Government Assistance Verification page
 
 
+  Scenario: Find a card right for you
+
+    Given Open Target main page
+    When Click on Target Circle link
+    When Click on Find a card right for you
+    Then Verify circle card logo
+
+#homework N4.3
   Scenario: Verify lemon is successfully added to cart
     Given Open Target main page
     When Search for lemon
     When Add to card
     Then Verify lemon in the card
+
+
+#homework N4.1
+  Scenario:User can search milk
+    Given Open Target main page
+    When Search for milk
+    Then Verify result for milk
+
+
+  Scenario:User can search bread
+    Given Open Target main page
+    When Search for bread
+    Then Verify result for bread
+
+
+
 
 
 

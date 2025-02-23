@@ -1,3 +1,5 @@
+
+"""""
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -34,3 +36,9 @@ driver.get("https://www.amazon.com/")
 
 
 sleep(5)
+
+"""
+
+
+def driver():
+    return None
