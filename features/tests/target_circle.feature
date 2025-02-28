@@ -107,6 +107,11 @@ Feature: Test for Target Circle
     Then Verify result for bread
 
 
+#homework N4.2
+  Scenario: Verify benefit cells
+    Given Open Target main page
+    When Click on Target Circle link
+    Then Verify at least 10 benefit cells
 
 
 

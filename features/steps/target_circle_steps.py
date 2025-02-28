@@ -204,4 +204,9 @@ def result_for_bread(context):
 
 
 
+@then('Verify at least 10 benefit cells')
+def verify_at_least(context):
+    elements = context.driver.find_elements(By.CSS_SELECTOR, ".cell-item-content")
+    assert len(elements)>=10
+
 
