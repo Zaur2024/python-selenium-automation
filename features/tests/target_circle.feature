@@ -1,5 +1,5 @@
 Feature: Test for Target Circle
-#homework N4.2
+
   Scenario: Verify Join Target Circle
 
     Given Open Target main page
@@ -86,7 +86,7 @@ Feature: Test for Target Circle
     When Click on Find a card right for you
     Then Verify circle card logo
 
-#homework N4.3
+# homework 5.1
   Scenario: Verify lemon is successfully added to cart
     Given Open Target main page
     When Search for lemon
@@ -94,7 +94,7 @@ Feature: Test for Target Circle
     Then Verify lemon in the card
 
 
-#homework N4.1
+
   Scenario:User can search milk
     Given Open Target main page
     When Search for milk
@@ -107,7 +107,7 @@ Feature: Test for Target Circle
     Then Verify result for bread
 
 
-#homework N4.2
+
   Scenario: Verify benefit cells
     Given Open Target main page
     When Click on Target Circle link

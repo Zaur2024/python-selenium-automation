@@ -1,10 +1,18 @@
 from selenium.webdriver.common.by import By
 
+#from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+
 from behave import given, when, then
 from time import sleep
 
-import CSS_selector
 
+import CSS_selector
+#from features.steps.target_main_page import driver
+
+#driver.wait=WebDriverWait(driver, 10)
 
 
 
@@ -155,21 +163,51 @@ def circle_card_logo(context):
     sleep(2)
 
 
-#homework N4.3
+"""
 @when("Search for lemon")
 def search_for_lemon(context):
     context.driver.find_element(By.ID,"search").send_keys("lemon")
     context.driver.find_element(By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']").click()
-    sleep(10)
+    driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[href='/p/lemon-each/-/A-15013629#lnk=sametab']"))).click()
 
 
 @when("Add to card")
 def add_to_card(context):
-    context.driver.find_element(By.CSS_SELECTOR, "[href='/p/lemon-each/-/A-15013629#lnk=sametab']").click()
-    sleep(2)
+    #context.driver.find_element(By.CSS_SELECTOR, "[href='/p/lemon-each/-/A-15013629#lnk=sametab']").click()
+    #sleep(2)
     context.driver.find_element(By.ID,"addToCartButtonOrTextIdFor15013629").click()
     sleep(3)
     context.driver.find_element(By.CSS_SELECTOR,"[href='/cart']").click()
+"""
+
+# homework 5.1
+@when("Search for lemon")
+def search_for_lemon(context):
+    context.driver.wait.until(EC.visibility_of_element_located((By.ID, "search"))).send_keys("lemon")
+    context.driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']"))).click()
+    sleep(4)
+
+
+@when("Add to card")
+def add_to_card(context):
+    #use this to remove the popup. Its better way.
+    context.driver.wait.until(
+        EC.invisibility_of_element_located((By.CLASS_NAME, "heroImg"))
+    )
+
+
+    context.driver.wait.until(
+        EC.element_to_be_clickable((By.ID, "addToCartButtonOrTextIdFor15013629"))
+    ).click()
+
+    context.driver.wait.until(
+        EC.element_to_be_clickable((By.XPATH, "//button[@data-test='orderPickupButton']"))
+    ).click()
+
+
+    context.driver.wait.until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, "[href='/cart']"))
+    ).click()
 
 
 @then("Verify lemon in the card")
@@ -180,7 +218,6 @@ def verify_lemon(context):
     sleep(2)
 
 
-#homework N4.1
 @when("search for {product}")
 def search_product(context,product):
     context.driver.find_element(By.ID,"search").send_keys(product)
