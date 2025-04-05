@@ -92,8 +92,7 @@ Feature: Test for Target Circle
     When Search for lemon
     When Add to card
     Then Verify lemon in the card
-
-
+    
 
   Scenario:User can search milk
     Given Open Target main page
