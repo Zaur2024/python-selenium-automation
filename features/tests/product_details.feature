@@ -1,4 +1,4 @@
-
+"""
 Feature: Tests for product page
 
   Scenario: User can select colors

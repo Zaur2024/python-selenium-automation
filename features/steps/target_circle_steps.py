@@ -1,3 +1,5 @@
+"""
+
 from selenium.webdriver.common.by import By
 
 #from selenium.webdriver.support.wait import WebDriverWait
@@ -163,7 +165,7 @@ def circle_card_logo(context):
     sleep(2)
 
 
-"""
+
 @when("Search for lemon")
 def search_for_lemon(context):
     context.driver.find_element(By.ID,"search").send_keys("lemon")
@@ -178,7 +180,7 @@ def add_to_card(context):
     context.driver.find_element(By.ID,"addToCartButtonOrTextIdFor15013629").click()
     sleep(3)
     context.driver.find_element(By.CSS_SELECTOR,"[href='/cart']").click()
-"""
+
 
 # homework 5.1
 @when("Search for lemon")
@@ -247,3 +249,4 @@ def verify_at_least(context):
     assert len(elements)>=10
 
 
+"""

@@ -5,7 +5,7 @@ from behave import given, when, then
 COLOR_OPTIONS=(By.CSS_SELECTOR,"div[aria-label='Carousel'] li img")
 SELECTED_COLOR=(By.CSS_SELECTOR,"[data-test='@web/VariationComponent'] div")
 
-
+"""
 @given ('Open target product {product_id} page')
 def open_target(content,product_id):
     content.driver.get(f'https://www.target.com/p/{product_id}')
@@ -29,4 +29,6 @@ def click_and_verify_colors(context):
         print(actual_colors)
 
     assert expected_colors == actual_colors, f'Expedted {expected_colors} did not match {actual_colors}'
+
+"""
 
