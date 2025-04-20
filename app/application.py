@@ -5,6 +5,10 @@ from pages.search_results_page import SearchResultsPage
 
 
 
+
+
+
+
 class Application:
 
     def __init__(self, driver):
@@ -14,4 +18,7 @@ class Application:
         self.header=Header(driver)
         self.search=SearchResultsPage(driver)
         self.main_page=MainPage(driver)
+        
+
+
 

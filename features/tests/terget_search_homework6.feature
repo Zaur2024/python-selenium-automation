@@ -6,3 +6,8 @@ Feature: Test for search
     Then Verify search results for tea
 
 
+   Scenario: “Your cart is empty” message is shown for empty cart
+    Given Open Target main page
+    When Click on cart icon
+    Then Verify “Your cart is empty” message is shown
+
