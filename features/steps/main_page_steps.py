@@ -17,3 +17,12 @@ def search_product(context, product):
 def verify_search_results(content,product):
     content.app.search.verify_search_results()
 
+
+@when('click on cart icon')
+def cart_page(context):
+    context.app.cart.cart_page()
+
+
+@then('Verify “Your cart is empty” message is shown')
+def verify_cart(context):
+    context.app.cart.verify_cart()
